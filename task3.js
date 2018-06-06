@@ -10,7 +10,12 @@ var strnum = str.match(num);
 if (vow){
     process.stdout.write(`${vow.join("")} `);
 }
-process.stdout.write(`${str.replace(vowels, '').replace(num, '')} `);
+var cons = str.replace(vowels, '').replace(num, '')
+if (cons){
+    process.stdout.write(`${cons} `);
+}
 if (strnum){
     process.stdout.write(strnum.join(""));
 }
+
+
