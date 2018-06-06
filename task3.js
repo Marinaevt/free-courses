@@ -5,8 +5,12 @@ var notwntsym = /[^A-Za-z0-9]/g;
 var vowels = /[aeiouAEIOU]/g;
 var num = /[0-9]/g;
 var str = args.join('').replace(notwntsym, '');
-//console.log(str.match(vowels))
-process.stdout.write(`${str.match(vowels).join("")} `);
+var vow = str.match(vowels);
+var strnum = str.match(num);
+if (vow){
+    process.stdout.write(`${vow.join("")} `);
+}
 process.stdout.write(`${str.replace(vowels, '').replace(num, '')} `);
-process.stdout.write(str.match(num).join(""));
-
+if (strnum){
+    process.stdout.write(strnum.join(""));
+}
